@@ -221,7 +221,7 @@ section {
 .header-content .left-header .image {
   border-radius: var(--br-sm-2);
   height: 90%;
-  width: 75%;
+  width: 80%;
   margin-left: 1.6rem;
   background-color: var(--color-ivory);
   -webkit-transition: all 0.3s ease-in-out;
@@ -229,26 +229,24 @@ section {
 }
 
 .header-content .left-header .image img {
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 84%;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  -webkit-filter: grayscale(10%);
-          filter: grayscale(10%);
 }
 
 .header-content .left-header .image img:hover {
-  width: 100.5%;
-  height: 100.5%;
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
+  width: 95.5%;
+  height: 84.5%;
+  -webkit-filter: brightness(1.08);
+          filter: brightness(1.08);
 }
 
 .header-content .left-header .image:hover {
   height: 90.5%;
-  width: 75.5%;
+  width: 80.5%;
 }
 
 .header-content .right-header {
@@ -275,7 +273,7 @@ section {
 }
 
 .header-content .right-header p {
-  margin: 1.5rem 0;
+  margin: 1rem 1.5rem;
 }
 
 .main-title {
@@ -431,7 +429,7 @@ section {
   padding-left: 2rem;
   text-transform: uppercase;
   font-size: 1.2rem;
-  color: var(--color-grey-1);
+  color: var(--color-grey-0);
   letter-spacing: 2px;
 }
 
@@ -443,5 +441,117 @@ section {
   width: 2rem;
   height: 2px;
   background-color: var(--color-grey-5);
+}
+
+.portfolios {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+
+.portfolios .portfolio-item {
+  position: relative;
+  border-radius: 15px;
+}
+
+.portfolios .portfolio-item img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+}
+
+.portfolios .portfolio-item img:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.portfolios .portfolio-item .hover-item {
+  width: 100%;
+  height: 30%;
+  position: relative;
+  left: 0;
+  top: 0;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0;
+}
+
+.portfolios .portfolio-item .hover-item h3 {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.portfolios .portfolio-item .hover-item .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portfolios .portfolio-item .hover-item .icons .icon {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 1rem;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.portfolios .portfolio-item .hover-item .icons .icon i {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  margin: 0 1rem;
+}
+
+.portfolios .portfolio-item .hover-item .icons .icon:hover {
+  background-color: var(--color-white);
+}
+
+.portfolios .portfolio-item .hover-item .icons .icon:hover i {
+  color: var(--color-primary);
+}
+
+.portfolio-item:hover .hover-item {
+  opacity: 1;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 /*# sourceMappingURL=styles.css.map */

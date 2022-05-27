@@ -174,26 +174,25 @@ section {
     .image {
       border-radius: var(--br-sm-2);
       height: 90%;
-      width: 75%;
+      width: 80%;
       margin-left: 1.6rem;
       background-color: var(--color-ivory);
       transition: all 0.3s ease-in-out;
       img {
-        width: 100%;
-        height: 100%;
+        width: 95%;
+        height: 84%;
         object-fit: cover;
         transition: all 0.4s ease-in-out;
-        filter: grayscale(10%);
         &:hover {
-          width: 100.5%;
-          height: 100.5%;
-          filter: grayscale(0%);
+          width: 95.5%;
+          height: 84.5%;
+          filter: brightness(1.08);
         }
       }
     }
     .image:hover {
       height: 90.5%;
-      width: 75.5%;
+      width: 80.5%;
     }
   }
 
@@ -210,7 +209,7 @@ section {
       }
     }
     p {
-      margin: 1.5rem 0;
+      margin: 1rem 1.5rem;
     }
   }
 }
@@ -322,7 +321,7 @@ section {
           padding-left: 2rem;
           text-transform: uppercase;
           font-size: 1.2rem;
-          color: var(--color-grey-1);
+          color: var(--color-grey-0);
           letter-spacing: 2px;
           &::before {
             content: '';
@@ -337,4 +336,78 @@ section {
       }
     }
   }
+}
+
+// portfolio page
+.portfolios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+
+  .portfolio-item {
+    position: relative;
+    border-radius: 15px;
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      filter: brightness(0.8);
+      &:hover {
+        filter: brightness(1.1);
+        transition: all 0.7s ease-in-out;
+      }
+    }
+    .hover-item {
+      width: 100%;
+      height: 30%;
+      position: relative;
+      left: 0;
+      top: 0;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      h3 {
+        font-size: 1.5rem;
+        color: var(--color-white);
+        margin-bottom: 1rem;
+      }
+      .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          background-color: var(--color-primary);
+          border-radius: 50%;
+          width: 45px;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 1rem;
+          cursor: pointer;
+          transition: all 0.4s ease-in-out;
+          i {
+            font-size: 1.5rem;
+            color: var(--color-white);
+            margin: 0 1rem;
+          }
+          &:hover {
+            background-color: var(--color-white);
+            i {
+              color: var(--color-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.portfolio-item:hover .hover-item {
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
 }
