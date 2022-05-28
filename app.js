@@ -33,6 +33,13 @@ function PageTransition() {
       // element.classList.add('active');
     }
   });
+
+  const theme = document.querySelector('.theme-btn');
+
+  theme.addEventListener('click', () => {
+    let body = document.body;
+    body.classList.toggle('dark-mode');
+  });
 }
 
 PageTransition();
