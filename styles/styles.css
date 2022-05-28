@@ -866,5 +866,18 @@ section {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .contact-content-con .right-contact .i-c-2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact-content-con .right-contact .i-c-2 :last-child {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+  .contact-content-con .right-contact {
+    margin-bottom: 6rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
