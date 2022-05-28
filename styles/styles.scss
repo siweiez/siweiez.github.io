@@ -66,7 +66,7 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 2rem 8rem;
+  padding: 2rem 6rem 2rem 2rem;
 }
 
 .section {
@@ -203,21 +203,22 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 100%;
+  .h-shape {
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary-bright);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    clip-path: polygon(67% 0, 0 0, 0 76%);
+  }
   .left-header {
     display: flex;
     align-items: center;
     position: relative;
-    .h-shape {
-      transition: all 0.4s ease-in-out;
-      width: 65%;
-      height: 100%;
-      background-color: var(--color-secondary);
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: -1;
-      clip-path: polygon(0 0, 60% 0, 100% 100%, 0 100%);
-    }
+
     .image {
       border-radius: var(--br-sm-2);
       height: 90%;
@@ -247,7 +248,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 4rem;
+    padding-right: 6rem;
     .name {
       font-size: 2.4rem;
       span {
@@ -317,17 +318,15 @@ section {
         flex-direction: column;
         .small-text {
           position: relative;
-          padding-left: 2rem;
+          padding-left: 2%;
           text-transform: uppercase;
           font-size: 1.2rem;
           color: var(--color-grey-0);
           letter-spacing: 2px;
           &::before {
-            content: '';
             position: absolute;
-            left: 0;
-            top: 15px;
-            width: 2rem;
+            top: 10%;
+            width: 80%;
             height: 2px;
             background-color: var(--color-grey-5);
           }
@@ -392,20 +391,20 @@ section {
 // for contact page
 .contact-content-con {
   display: flex;
-  flex-direction: column;
-  padding-top: 3.5rem;
+  flex-direction: row;
   .contact-info-box {
     padding-top: 2rem;
+    margin: 2rem 1rem;
     flex: 2;
-
     .contact-info {
+      padding-bottom: 2rem;
       .contact-item {
         display: flex;
         align-items: center;
         justify-content: space-between;
         p {
           text-align: right;
-          margin: 0.3rem 0 !important;
+          margin: 0.3rem 3rem !important;
           padding: 0 !important;
         }
         .icon {
@@ -423,12 +422,12 @@ section {
 
   .message-box {
     flex: 3;
+    padding-top: 3rem;
     .input-control {
-      padding-top: 1rem;
-      margin: 1.5rem 0;
+      margin: 0.5rem 0;
       input,
       textarea {
-        border-radius: 30px;
+        border-radius: 20px;
         font-weight: inherit;
         font-size: inherit;
         font-family: inherit;
@@ -444,13 +443,14 @@ section {
     .i-c-2 {
       display: flex;
       :last-child {
-        margin-left: 1.5rem;
+        margin-left: 3%;
       }
     }
   }
 }
 
 // for icons
+
 .icons {
   display: flex;
   flex-direction: column;
@@ -567,3 +567,5 @@ section {
     color: var(--color-white);
   }
 }
+
+@import './mediaqueries';
