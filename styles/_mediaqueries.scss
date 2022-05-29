@@ -1,4 +1,4 @@
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   header {
     padding-top: 50px;
     align-items: center;
@@ -45,6 +45,10 @@
         font-size: 4.2rem;
       }
     }
+  }
+
+  .about-h {
+    width: 90vw;
   }
   .portfolios {
     display: grid;

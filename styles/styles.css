@@ -382,10 +382,13 @@ section {
 }
 
 .about-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding-top: 3.5rem;
   padding-bottom: 2rem;
 }
@@ -400,7 +403,14 @@ section {
   grid-gap: 1.8rem;
 }
 
-.about-container .about-skills .skills-item {
+.about-container .about-skills .skills-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   border: 1px solid var(--color-grey-5);
   border-radius: 5px;
   -webkit-transition: all 0.4s ease-in-out;
@@ -409,7 +419,7 @@ section {
           box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-.about-container .about-skills .skills-item:hover {
+.about-container .about-skills .skills-block:hover {
   cursor: default;
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
@@ -418,8 +428,38 @@ section {
           box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.about-container .about-skills .skills-item .skills-text {
-  padding: 2rem;
+.about-container .about-skills .skills-block .skills-text {
+  padding-left: 2rem;
+  padding-top: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 12rem;
+}
+
+.about-container .about-skills .skills-block .skills-text .small-text {
+  position: relative;
+  padding-left: 2%;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--color-grey-0);
+  letter-spacing: 2px;
+}
+
+.about-container .about-skills .skills-block .skills-text .small-text::before {
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: var(--color-grey-5);
+}
+
+.about-container .about-skills .skills-block .skill-item {
+  padding: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -429,21 +469,32 @@ section {
           flex-direction: column;
 }
 
-.about-container .about-skills .skills-item .skills-text .small-text {
+.about-container .about-skills .skills-block .skill-item .i-name {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   position: relative;
-  padding-left: 2%;
-  text-transform: uppercase;
-  font-size: 1.2rem;
   color: var(--color-grey-0);
-  letter-spacing: 2px;
+  letter-spacing: 0.8px;
+  font-size: 1rem;
 }
 
-.about-container .about-skills .skills-item .skills-text .small-text::before {
-  position: absolute;
-  top: 10%;
-  width: 80%;
-  height: 2px;
-  background-color: var(--color-grey-5);
+.about-container .about-skills .skills-block .skill-item .i-image {
+  height: 6rem;
+  margin: 1rem;
+  background-color: var(--color-grey-0);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-container .about-skills .skills-block .skill-item .i-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 6rem;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .portfolios {
@@ -794,7 +845,7 @@ section {
   color: var(--color-white);
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
   header {
     padding-top: 50px;
     -webkit-box-align: center;
@@ -843,6 +894,9 @@ section {
   .main-title h2 .bg-text {
     font-weight: 750;
     font-size: 4.2rem;
+  }
+  .about-h {
+    width: 90vw;
   }
   .portfolios {
     display: -ms-grid;
