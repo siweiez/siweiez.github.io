@@ -207,7 +207,7 @@ section {
 .theme-btn-con {
   position: fixed;
   z-index: 10;
-  top: 5%;
+  top: 7%;
   right: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -216,8 +216,8 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-80%);
+          transform: translateY(-80%);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -290,30 +290,34 @@ section {
   position: relative;
 }
 
-.header-content .left-header .image {
+.header-content .left-header .h-image {
   border-radius: var(--br-sm-2);
   height: 90%;
   width: 80%;
   margin-left: 1.6rem;
   background-color: var(--color-white);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-.header-content .left-header .image img {
+.header-content .left-header .h-image img {
   width: 95%;
-  height: 84%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
-.header-content .left-header .image img:hover {
+.header-content .left-header .h-image img:hover {
   width: 95.5%;
-  height: 84.5%;
-  -webkit-filter: brightness(1.08);
-          filter: brightness(1.08);
+  height: 95.5%;
 }
 
 .header-content .left-header .image:hover {
@@ -791,23 +795,46 @@ section {
 }
 
 @media screen and (max-width: 850px) {
+  header {
+    padding-top: 50px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+    color: var(--color-black);
+    overflow: auto;
+  }
+  .section {
+    padding-top: 56px;
+  }
+  section {
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 2rem;
+  }
   .header-content {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
-  .left-header {
-    padding-left: 0rem;
-  }
-  .left-header .image {
-    margin-right: 5rem;
+  .h-image {
+    width: 90% !important;
+    padding: 0.5rem !important;
   }
   .right-header {
-    padding-left: 2rem;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem !important;
   }
   .right-header h1 {
-    line-height: 116%;
+    line-height: 120%;
+    padding: 0.8rem;
   }
   .main-title h2 {
     font-size: 3.5rem;
@@ -833,6 +860,103 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .navbar {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--color-white);
+    overflow-y: hidden;
+  }
+  .controls {
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-transform: translateY(-13%);
+            transform: translateY(-13%);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .controls .control {
+    cursor: pointer;
+    background-color: var(--color-white);
+    width: 48px;
+    height: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 10%;
+  }
+  .theme-btn-con {
+    position: fixed;
+    z-index: 10;
+    top: 33px;
+    right: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translateY(-60%);
+            transform: translateY(-60%);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .theme-btn-con .theme-btn {
+    padding: 1rem;
+    cursor: pointer;
+    width: 53px;
+    height: 53px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0.7rem 0;
+  }
+  .theme-btn-con .theme-btn i {
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    font-size: 1.6rem;
+    color: var(--color-grey-2);
+    pointer-events: none;
+  }
+  .theme-btn-con .theme-btn:hover i {
+    font-size: 1.7rem;
+    color: var(--color-grey-1);
+    -webkit-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
   }
 }
 

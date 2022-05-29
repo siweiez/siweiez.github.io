@@ -1,18 +1,39 @@
 @media screen and (max-width: 850px) {
+  header {
+    padding-top: 50px;
+    align-items: center;
+    height: auto;
+    color: var(--color-black);
+    overflow: auto;
+  }
+  .section {
+    padding-top: 56px;
+  }
+  section {
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 2rem;
+  }
   .header-content {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-  .left-header {
-    padding-left: 0rem;
-    .image {
-      margin-right: 5rem;
-    }
+  .h-image {
+    width: 90% !important;
+    padding: 0.5rem !important;
   }
   .right-header {
-    padding-left: 2rem;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem !important;
     h1 {
-      line-height: 116%;
+      line-height: 120%;
+      padding: 0.8rem;
     }
   }
   .main-title {
@@ -34,6 +55,75 @@
   .contact-content-con {
     display: flex;
     flex-direction: column;
+  }
+
+  // for nav bar
+  .navbar {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--color-white);
+    overflow-y: hidden;
+  }
+
+  .controls {
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    transform: translateY(-13%);
+    align-items: center;
+    justify-content: center;
+    .control {
+      cursor: pointer;
+      background-color: var(--color-white);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 10%;
+    }
+  }
+
+  .theme-btn-con {
+    position: fixed;
+    z-index: 10;
+    top: 33px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-60%);
+    align-items: center;
+    justify-content: center;
+    .theme-btn {
+      padding: 1rem;
+      cursor: pointer;
+      width: 53px;
+      height: 53px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.7rem 0;
+      i {
+        transition: all 0.25s ease-in-out;
+        font-size: 1.6rem;
+        color: var(--color-grey-2);
+        pointer-events: none;
+      }
+    }
+    .theme-btn:hover {
+      i {
+        font-size: 1.7rem;
+        color: var(--color-grey-1);
+        transition: 0.25s ease-in-out;
+      }
+    }
   }
 }
 

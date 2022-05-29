@@ -166,11 +166,11 @@ section {
 .theme-btn-con {
   position: fixed;
   z-index: 10;
-  top: 5%;
+  top: 7%;
   right: 5px;
   display: flex;
   flex-direction: column;
-  transform: translateY(-50%);
+  transform: translateY(-80%);
   align-items: center;
   justify-content: center;
   .theme-btn {
@@ -219,22 +219,25 @@ section {
     align-items: center;
     position: relative;
 
-    .image {
+    .h-image {
       border-radius: var(--br-sm-2);
       height: 90%;
       width: 80%;
       margin-left: 1.6rem;
       background-color: var(--color-white);
+      align-items: center;
       transition: all 0.3s ease-in-out;
       img {
         width: 95%;
-        height: 84%;
-        object-fit: cover;
+        height: 95%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: scale-down;
         transition: all 0.4s ease-in-out;
         &:hover {
           width: 95.5%;
-          height: 84.5%;
-          filter: brightness(1.08);
+          height: 95.5%;
         }
       }
     }
