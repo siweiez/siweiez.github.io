@@ -21,9 +21,14 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-  .h-image {
-    width: 90% !important;
-    padding: 0.5rem !important;
+  .left-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .h-image {
+      width: 90% !important;
+      margin: 0.5rem !important;
+    }
   }
   .right-header {
     position: relative;
@@ -49,6 +54,9 @@
 
   .about-h {
     width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .portfolios {
     display: grid;
@@ -70,17 +78,19 @@
     top: 0;
     right: 0;
     background-color: var(--color-white);
-    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   .controls {
-    position: fixed;
+    position: absolute;
+    height: 50px;
+    width: 50%;
     z-index: 10;
     top: 0px;
-    left: 0;
     display: flex;
     flex-direction: row;
-    transform: translateY(-13%);
+    transform: translateX(-50%);
+    align-self: center;
     align-items: center;
     justify-content: center;
     .control {
@@ -89,43 +99,48 @@
       width: 48px;
       height: 48px;
       display: flex;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
-      padding-right: 10%;
+      padding: 0 16%;
     }
   }
-
   .theme-btn-con {
     position: fixed;
     z-index: 10;
-    top: 33px;
-    right: 0px;
+    bottom: 10px;
+    right: 10px;
     display: flex;
     flex-direction: column;
-    transform: translateY(-60%);
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    transform: translateY(0%) !important;
     .theme-btn {
-      padding: 1rem;
+      transition: all 0.25s ease-in-out;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var(--color-secondary);
+      background-color: var(--color-secondary);
+      box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
       cursor: pointer;
-      width: 53px;
-      height: 53px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0.7rem 0;
+      margin: 0;
       i {
         transition: all 0.25s ease-in-out;
-        font-size: 1.6rem;
-        color: var(--color-grey-2);
+        font-size: 28px;
+        color: var(--color-white);
         pointer-events: none;
       }
     }
     .theme-btn:hover {
+      transform: translateY(-1px);
+      transition: 0.25s ease-in-out;
       i {
-        font-size: 1.7rem;
-        color: var(--color-grey-1);
-        transition: 0.25s ease-in-out;
+        color: var(--color-white);
+        font-size: 28px;
       }
     }
   }
