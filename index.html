@@ -248,22 +248,22 @@
               </div>
             </div>
           </div>
+
           <div class="message-box">
-            <form action="" class="contact-form">
+            <form target="_blank" action="https://formsubmit.co/siweiezhang@gmail.com" method="POST"
+              class="contact-form">
               <div class="input-control i-c-2">
-                <input type="text" required placeholder="YOUR NAME...">
-                <input type="email" required placeholder="YOUR EMAIL...">
+                <input type="text" name="name" placeholder="YOUR NAME..." required>
+                <input type="email" name="email" placeholder="YOUR EMAIL..." required>
               </div>
               <div class="input-control">
-                <input type="text" required placeholder="SUBJECT...">
+                <input type="text" name="subject" placeholder="SUBJECT...">
               </div>
               <div class="input-control">
-                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                <textarea name="message" cols="15" rows="8" placeholder="Message Here..." required></textarea>
               </div>
               <div class="btn-submit-container">
-                <a href="" class="submit-btn">
-                  <span class="btn-text">Submit</span>
-                </a>
+                <button type="submit" class="submit-btn">Submit</button>
               </div>
             </form>
           </div>
@@ -271,7 +271,6 @@
       </div>
     </section>
   </main>
-
 
   <div class="navbar">
     <div class="controls">
