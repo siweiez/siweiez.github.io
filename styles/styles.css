@@ -24,7 +24,7 @@
 }
 
 .dark-mode {
-  --color-primary: rgb(54, 50, 50);
+  --color-primary: rgb(46, 43, 43);
   --color-secondary: #d1342fff;
   --color-secondary-bright: rgb(255, 83, 77);
   --color-white: #000;
@@ -139,6 +139,8 @@ section {
   top: 0;
   right: 0;
   background-color: var(--color-white);
+  -webkit-box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -684,7 +686,7 @@ section {
 .contact-content-con .submit-btn {
   border-radius: 30px;
   height: 40px;
-  background-color: var(--color-white);
+  background-color: var(--color-secondary);
   font-size: 1.2rem;
   font-family: inherit;
   font-weight: 500;
@@ -701,22 +703,17 @@ section {
   overflow: hidden;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  -webkit-box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
-  color: var(--color-black);
+  -webkit-box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
+  color: var(--color-white);
   padding: 0 1.6rem;
 }
 
 .contact-content-con .submit-btn:hover {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  border: 1px solid var(--color-secondary);
-  -webkit-box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
-          box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
-  background-color: var(--color-secondary);
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
-  color: var(--color-white);
 }
 
 .icons {
@@ -790,7 +787,7 @@ section {
 
 .main-btn {
   border-radius: 25px;
-  background-color: var(--color-white);
+  background-color: var(--color-secondary);
   font-weight: 600;
   position: relative;
   border: 1.5px solid var(--color-secondary);
@@ -805,17 +802,17 @@ section {
   overflow: hidden;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  -webkit-box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.25);
 }
 
 .main-btn .btn-text {
-  color: var(--color-black);
+  color: var(--color-white);
   padding: 0 1.6rem;
 }
 
 .main-btn .btn-icon {
-  color: var(--color-black);
+  color: var(--color-white);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -832,20 +829,10 @@ section {
 .main-btn:hover {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  border: 1.5px solid var(--color-secondary);
-  -webkit-box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
-          box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
-  background-color: var(--color-secondary);
+  -webkit-box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.3);
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
-}
-
-.main-btn:hover .btn-text {
-  color: var(--color-white);
-}
-
-.main-btn:hover i {
-  color: var(--color-white);
 }
 
 @media screen and (max-width: 900px) {
@@ -997,8 +984,8 @@ section {
   .theme-btn-con {
     position: fixed;
     z-index: 10;
-    bottom: 10px;
-    right: 10px;
+    bottom: 25px;
+    right: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

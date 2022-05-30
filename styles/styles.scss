@@ -23,7 +23,7 @@
 }
 
 .dark-mode {
-  --color-primary: rgb(54, 50, 50);
+  --color-primary: rgb(46, 43, 43);
   --color-secondary: #d1342fff;
   --color-secondary-bright: rgb(255, 83, 77);
   --color-white: #000;
@@ -117,6 +117,7 @@ section {
   top: 0;
   right: 0;
   background-color: var(--color-white);
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -495,7 +496,7 @@ section {
   .submit-btn {
     border-radius: 30px;
     height: 40px;
-    background-color: var(--color-white);
+    background-color: var(--color-secondary);
     font-size: 1.2rem;
     font-family: inherit;
     font-weight: 500;
@@ -506,18 +507,14 @@ section {
     align-items: center;
     overflow: hidden;
     transition: all 0.4s ease-in-out;
-    box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
-    color: var(--color-black);
+    box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
     padding: 0 1.6rem;
   }
 
   .submit-btn:hover {
     transition: all 0.4s ease-in-out;
-    border: 1px solid var(--color-secondary);
-    box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
-    background-color: var(--color-secondary);
     transform: translateY(-1px);
-    color: var(--color-white);
   }
 }
 
@@ -564,7 +561,7 @@ section {
 
 .main-btn {
   border-radius: 25px;
-  background-color: var(--color-white);
+  background-color: var(--color-secondary);
   font-weight: 600;
   position: relative;
   border: 1.5px solid var(--color-secondary);
@@ -573,15 +570,15 @@ section {
   align-items: center;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
-  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.25);
 
   .btn-text {
-    color: var(--color-black);
+    color: var(--color-white);
     padding: 0 1.6rem;
   }
 
   .btn-icon {
-    color: var(--color-black);
+    color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -592,16 +589,8 @@ section {
 
 .main-btn:hover {
   transition: all 0.4s ease-in-out;
-  border: 1.5px solid var(--color-secondary);
-  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
-  background-color: var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.3);
   transform: translateY(-1px);
-  .btn-text {
-    color: var(--color-white);
-  }
-  i {
-    color: var(--color-white);
-  }
 }
 
 @import './mediaqueries';
