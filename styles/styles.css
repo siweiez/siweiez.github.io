@@ -9,7 +9,7 @@
 :root {
   --color-primary: #f9f9f9;
   --color-secondary: #8bbfec;
-  --color-secondary-bright: #e2f2ff;
+  --color-secondary-b: #e2f2ff;
   --color-white: #ffffff;
   --color-black: #000;
   --color-grey0: #595959;
@@ -24,10 +24,10 @@
 }
 
 .dark-mode {
-  --color-primary: rgb(46, 43, 43);
+  --color-primary: #000000;
   --color-secondary: #d1342fff;
-  --color-secondary-bright: rgb(255, 83, 77);
-  --color-white: #000;
+  --color-secondary-b: rgb(161, 41, 37);
+  --color-white: #1c1c1e;
   --color-black: #ffffff;
   --color-grey0: rgb(232, 232, 232);
   --color-grey-1: rgb(195, 195, 195);
@@ -273,7 +273,7 @@ section {
   transition: all 0.4s ease-in-out;
   width: 100%;
   height: 100%;
-  background-color: var(--color-secondary-bright);
+  background-color: var(--color-secondary-b);
   position: absolute;
   left: 0;
   top: 0;
@@ -935,6 +935,8 @@ section {
     right: 0;
     background-color: var(--color-white);
     overflow-x: visible;
+    -webkit-box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.4);
   }
   .controls {
     position: absolute;
