@@ -32,13 +32,11 @@
   }
   .right-header {
     position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5rem !important;
+    padding: 3rem !important;
     h1 {
-      line-height: 120%;
-      padding: 0.8rem;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
     }
   }
   .main-title {

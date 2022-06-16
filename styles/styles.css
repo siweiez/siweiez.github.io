@@ -26,7 +26,7 @@
 .dark-mode {
   --color-primary: #000000;
   --color-secondary: #d1342fff;
-  --color-secondary-b: rgb(161, 41, 37);
+  --color-secondary-b: rgb(131, 34, 31);
   --color-white: #1c1c1e;
   --color-black: #ffffff;
   --color-grey0: rgb(232, 232, 232);
@@ -42,7 +42,7 @@
 
 body {
   background-color: var(--color-primary);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   color: var(--color-black);
   -webkit-transition: all 0.4s ease-in-out;
@@ -341,17 +341,21 @@ section {
   padding-right: 6rem;
 }
 
-.header-content .right-header .name {
+.header-content .right-header h1 {
   font-size: 2.4rem;
+  font-weight: 200;
 }
 
-.header-content .right-header .name span {
+.header-content .right-header span {
   color: var(--color-secondary);
-  line-height: 1.8rem;
-}
-
-.header-content .right-header p {
-  margin: 1rem 1.5rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 2.8rem;
+  font-weight: 500;
+  -webkit-transform: scale(1.1, 1);
+          transform: scale(1.1, 1);
+  text-shadow: 2px 3px var(--color-secondary-b);
 }
 
 .main-title {
@@ -877,14 +881,19 @@ section {
   }
   .right-header {
     position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5rem !important;
+    padding: 3rem !important;
   }
   .right-header h1 {
-    line-height: 120%;
-    padding: 0.8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .main-title h2 {
     font-size: 3.5rem;
