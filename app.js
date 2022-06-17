@@ -27,6 +27,10 @@ function PageTransition() {
     }
   });
 
+
+}
+
+function ThemeTransition() {
   const theme = document.querySelector('.theme-btn');
   theme.addEventListener('click', () => {
     let body = document.body;
@@ -35,3 +39,4 @@ function PageTransition() {
 }
 
 PageTransition();
+ThemeTransition();
