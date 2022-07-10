@@ -80,8 +80,8 @@ section {
 
 .active-section {
   display: block;
-  -webkit-animation: animate 0.4s ease-in;
-          animation: animate 0.4s ease-in;
+  -webkit-animation: animate 0.4s ease-in-out;
+          animation: animate 0.4s ease-in-out;
 }
 @-webkit-keyframes animate {
   0% {
@@ -270,14 +270,43 @@ section {
   transform: scale(1.1, 1);
   text-shadow: 2px 3px var(--color-secondary-b);
 }
-.header-content .right-header h2 {
+.header-content .right-header .scrolling-words-container {
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+.header-content .right-header .scrolling-words-container .scrolling-words-box {
+  height: 46px;
+  overflow: hidden;
+}
+.header-content .right-header .scrolling-words-container .scrolling-words-box .descriptive-text-list {
   color: var(--color-grey-0);
-  padding-top: 1rem;
-  padding-right: 1rem;
   text-align: end;
+  -webkit-animation: scroll-text 5s infinite;
+          animation: scroll-text 5s infinite;
+}
+@-webkit-keyframes scroll-text {
+  15%, 25% {
+    transform: translateY(-33.3333333333%);
+  }
+  40%, 50% {
+    transform: translateY(-66.6666666667%);
+  }
+}
+@keyframes scroll-text {
+  15%, 25% {
+    transform: translateY(-33.3333333333%);
+  }
+  40%, 50% {
+    transform: translateY(-66.6666666667%);
+  }
+}
+.header-content .right-header .scrolling-words-container .scrolling-words-box .descriptive-text-list .decriptive-item {
   font-size: 1.8rem;
   font-weight: 100;
-  letter-spacing: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 1;
 }
 
 .main-title {

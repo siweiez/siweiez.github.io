@@ -104,13 +104,15 @@ section {
   position: relative;
   transition: all 0.4s ease-in-out;
   background-color: var(--color-primary);
+  // hide other sections
   display: none;
   transform: translateY(0) scale(1);
 }
 
 .active-section {
+  // display clicked section
   display: block;
-  animation: animate 0.4s ease-in;
+  animation: animate 0.4s ease-in-out;
   @keyframes animate {
     0% {
       transform: translateY(-10%) scale(1);
@@ -263,13 +265,35 @@ section {
       transform: scale(1.1, 1);
       text-shadow: 2px 3px var(--color-secondary-b);
     }
-    h2 {
-      color: var(--color-grey-0);
-      padding-top: 1rem;
-      padding-right: 1rem;
-      text-align: end;
-      @include text-size(1.8rem, 100);
-      letter-spacing: 0.1rem;
+    .scrolling-words-container {
+      margin-top: 1rem;
+      margin-right: 1rem;
+      .scrolling-words-box {
+        height: 46px;
+        overflow: hidden;
+        .descriptive-text-list {
+          color: var(--color-grey-0);
+          text-align: end;
+          animation: scroll-text 5s infinite;
+          // animation reference: https://codepen.io/azrikahar/pen/NWNEByV
+          @keyframes scroll-text {
+            $item-count: 3;
+            @for $i from 1 through ($item-count - 1) {
+              #{($i * 25) - 10%},
+              #{$i * 25%} {
+                transform: translateY(calc(-100% / $item-count) * $i);
+              }
+            }
+          }
+          .decriptive-item {
+            @include text-size(1.8rem, 100);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }
