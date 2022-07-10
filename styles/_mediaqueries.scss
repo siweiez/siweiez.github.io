@@ -139,6 +139,17 @@
 }
 
 @media screen and (max-width: 768px) {
+  .header-content {
+    h1 {
+      font-size: 2rem !important;
+    }
+    span {
+      font-size: 3rem !important;
+    }
+    h2 {
+      font-size: 1.8rem !important;
+    }
+  }
   .main-title {
     h2 {
       @include text-size(3rem, 650);

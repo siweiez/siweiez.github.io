@@ -71,7 +71,6 @@
 body {
   @include flex(column);
   min-height: 100vh;
-  justify-content: space-around;
   background-color: var(--color-primary);
   font-family: "Great Vibes", cursive;
   font-family: "Poppins", sans-serif;
@@ -301,6 +300,7 @@ section {
 .about-container {
   @include animate-block(0.5s);
   @include flex(column);
+  justify-content: flex-start;
   padding-top: 3.5rem;
   padding-bottom: 2rem;
   .about-heading {
@@ -514,6 +514,7 @@ section {
   border-radius: 25px;
   background-color: var(--color-secondary);
   @include text-size(1.2rem, 500);
+  white-space: nowrap;
   font-family: inherit;
   color: var(--color-white);
   position: relative;
