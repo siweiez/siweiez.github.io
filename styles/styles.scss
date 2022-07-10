@@ -7,8 +7,8 @@
 
 :root {
   --color-primary: #f8f8f8;
-  --color-secondary: #8bbfec;
-  --color-secondary-b: #e2f2ff;
+  --color-secondary: #ebaab4;
+  --color-secondary-b: #ffe9e9;
   --color-white: #ffffff;
   --color-black: #000;
   --color-grey: #808080;
@@ -20,24 +20,58 @@
   --color-grey-5: #e2e2e2;
   --color-grey-6: #f8f8f8;
 }
-
 .dark-mode {
   --color-primary: #232323;
-  --color-secondary: #d1342fff;
-  --color-secondary-b: rgb(131, 34, 31);
+  --color-secondary: #718ef6;
+  --color-secondary-b: #2e318d;
   --color-white: #121212;
   --color-black: #ffffff;
   --color-grey: #808080;
-  --color-grey-0: rgb(232, 232, 232);
-  --color-grey-1: rgb(195, 195, 195);
-  --color-grey-2: rgb(172, 172, 172);
-  --color-grey-3: rgb(92, 92, 92);
-  --color-grey-4: #3d3d3d;
+  --color-grey-0: #e8e8e8;
+  --color-grey-1: #c3c3c3;
+  --color-grey-2: #acacac;
+  --color-grey-3: #5c5c5c;
+  --color-grey-4: #454545;
   --color-grey-5: #313131;
   --color-grey-6: #181818;
 }
 
+@mixin flex($param) {
+  display: flex;
+  flex-direction: $param;
+}
+
+@mixin grid-display($count) {
+  display: grid;
+  grid-template-columns: repeat($count, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+
+@mixin text-size($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin animate-block($time) {
+  animation: animate-text $time ease-in;
+  @keyframes animate-text {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
 body {
+  @include flex(column);
+  min-height: 100vh;
+  justify-content: space-around;
   background-color: var(--color-primary);
   font-family: "Great Vibes", cursive;
   font-family: "Poppins", sans-serif;
@@ -60,15 +94,15 @@ header {
 
 section {
   min-height: 100vh;
-  width: 100%;
-  position: absolute;
   left: 0;
   top: 0;
   padding: 2rem 6rem 2rem 2rem;
 }
 
 .section {
-  transform: translateY(-100%) scale(0);
+  min-height: 100vh;
+  margin-bottom: 3rem;
+  position: relative;
   transition: all 0.4s ease-in-out;
   background-color: var(--color-primary);
   display: none;
@@ -107,8 +141,7 @@ section {
     z-index: 10;
     top: 50%;
     right: 5px;
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
     transform: translateY(-50%);
     align-items: center;
     justify-content: center;
@@ -151,8 +184,7 @@ section {
   right: 5px;
   width: 53px;
   height: 53px;
-  display: flex;
-  flex-direction: column;
+  @include flex(column);
   transform: translateY(-80%);
   align-items: center;
   justify-content: center;
@@ -216,20 +248,19 @@ section {
   }
 
   .right-header {
-    display: flex;
-    flex-direction: column;
+    @include animate-block(1s);
+    @include flex(column);
     justify-content: center;
     padding-right: 6rem;
     h1 {
       color: var(--color-grey-0);
-      font-size: 2.8rem;
-      font-weight: 100;
+      @include text-size(2.8rem, 100);
       letter-spacing: 0.2rem;
     }
     span {
       align-self: center;
       font-family: "Great Vibes";
-      font-size: 4rem;
+      @include text-size(4rem, 600);
       transform: scale(1.1, 1);
       text-shadow: 2px 3px var(--color-secondary-b);
     }
@@ -238,8 +269,7 @@ section {
       padding-top: 1rem;
       padding-right: 1rem;
       text-align: end;
-      font-size: 1.8rem;
-      font-weight: 100;
+      @include text-size(1.8rem, 100);
       letter-spacing: 0.1rem;
     }
   }
@@ -251,8 +281,7 @@ section {
   h2 {
     position: relative;
     text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 700;
+    @include text-size(4rem, 700);
     span {
       color: var(--color-secondary);
     }
@@ -264,20 +293,30 @@ section {
       transition: all 0.4s ease-in-out;
       z-index: -1;
       transform: translate(-50%, -50%);
-      font-weight: 800;
-      font-size: 5.68rem;
+      @include text-size(5.68rem, 800);
     }
   }
 }
 
 .about-container {
-  display: flex;
-  flex-direction: column;
+  @include animate-block(0.5s);
+  @include flex(column);
   padding-top: 3.5rem;
   padding-bottom: 2rem;
+  .about-heading {
+    @include text-size(2rem, 500);
+    margin-bottom: 1rem;
+  }
+  .about-text {
+    font-family: inherit;
+    @include text-size(1.1rem, 300);
+    color: var(--color-grey-1);
+    margin-bottom: 2rem;
+  }
 
   // skills blocks
   .about-skills {
+    @include animate-block(1s);
     position: relative;
     top: 3rem;
     display: grid;
@@ -285,8 +324,7 @@ section {
     grid-gap: 1.8rem;
 
     .skills-block {
-      display: flex;
-      flex-direction: row;
+      @include flex(row);
       background-color: var(--color-grey-6);
       border: 1px solid var(--color-grey-5);
       border-radius: 5px;
@@ -301,14 +339,13 @@ section {
       .skills-text {
         padding-left: 2rem;
         padding-top: 1.2rem;
-        display: flex;
-        flex-direction: column;
+        @include flex(column);
         width: 12rem;
         .small-text {
           position: relative;
           padding-left: 2%;
           text-transform: uppercase;
-          font-size: 1.2rem;
+          @include text-size(1.3rem, 400);
           color: var(--color-grey-0);
           letter-spacing: 2px;
           &::before {
@@ -323,14 +360,13 @@ section {
 
       .skill-item {
         padding: 2rem 0;
-        display: flex;
-        flex-direction: column;
+        @include flex(column);
         .i-name {
           align-self: center;
           position: relative;
           color: var(--color-grey-0);
           letter-spacing: 1px;
-          font-size: 1rem;
+          @include text-size(1rem, 300);
           font-family: inherit;
         }
         .i-image {
@@ -348,15 +384,11 @@ section {
 
 // for portfolio page
 .portfolios {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  margin-top: 3rem;
-
+  @include animate-block(1s);
+  @include grid-display(3);
   .portfolio-item {
     position: relative;
     border-radius: 15px;
-
     img {
       width: 100%;
       height: 300px;
@@ -371,16 +403,15 @@ section {
       position: relative;
       left: 0;
       top: 0;
+      @include flex(column);
       border-radius: 15px;
-      display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       opacity: 0;
       h3 {
         padding-top: 1rem;
         text-align: center;
-        font-size: 1.5rem;
+        @include text-size(1.3rem, 600);
         color: var(--color-black);
         margin-bottom: 1rem;
       }
@@ -400,8 +431,8 @@ section {
 
 // for contact page
 .contact-content-con {
-  display: flex;
-  flex-direction: row;
+  @include flex(row);
+  @include animate-block(1s);
   .contact-info-box {
     padding-top: 3rem;
     flex: 2;
@@ -431,8 +462,7 @@ section {
 
   //message form
   .message-box {
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
     flex: 3;
     padding-top: 3rem;
 
@@ -441,8 +471,7 @@ section {
       input,
       textarea {
         border-radius: 20px;
-        font-weight: inherit;
-        font-size: inherit;
+        @include text-size(inherit, inherit);
         font-family: inherit;
         padding: 0.8rem 1.1rem;
         outline: none;
@@ -460,64 +489,32 @@ section {
       }
     }
   }
-
-  // email contact form submit btn
-  .btn-submit-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
-// for icons
-.icons {
-  display: flex;
-  flex-direction: column;
+// email contact form submit btn
+.btn-submit-container {
+  @include flex(column);
   align-items: center;
+  .submit-content {
+    @extend .btn-content;
+  }
 }
-.icon {
-  display: flex;
-  a {
-    display: flex;
-    align-items: center;
-    color: var(--color-black);
-    background-color: var(--color-grey-5);
-    cursor: pointer;
-    justify-content: center;
-    margin: 0 1rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    transition: all 0.4s ease-in-out;
-    i {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-    }
-    &:hover {
-      background-color: var(--color-secondary);
-      i {
-        color: var(--color-primary);
-      }
-    }
+// download resume btn
+.btn-resume-container {
+  @include flex(row);
+  align-items: flex-start;
+  .resume-content {
+    @extend .btn-content;
   }
 }
 
-// download resume btn
-.btn-container {
-  display: flex;
-  align-self: flex-start;
-}
-
-.main-btn {
+.btn-content {
   cursor: pointer;
   height: 45px;
   border-radius: 25px;
   background-color: var(--color-secondary);
-  font-size: 1.2rem;
+  @include text-size(1.2rem, 500);
   font-family: inherit;
-  font-weight: 500;
   color: var(--color-white);
   position: relative;
   border: 1.5px solid var(--color-secondary);
@@ -540,6 +537,53 @@ section {
     transition: all 0.4s ease-in-out;
     box-shadow: 1px 3px 15px var(--color-grey-3);
     transform: translateY(-1px);
+  }
+}
+
+// for icons
+.icons {
+  @include flex(column);
+  align-items: center;
+  .icon {
+    display: flex;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-black);
+      background-color: var(--color-grey-5);
+      cursor: pointer;
+      margin: 0 1rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: all 0.4s ease-in-out;
+      i {
+        justify-content: center;
+        font-size: 1.3rem;
+      }
+      &:hover {
+        background-color: var(--color-secondary);
+        i {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+}
+
+// for footer
+footer {
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  p {
+    margin: 3rem 0;
+    color: var(--color-grey-4);
+    @include text-size(0.8rem, 200);
   }
 }
 

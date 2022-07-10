@@ -14,7 +14,6 @@ function PageTransition() {
       this.className += ' active-btn';
     });
   }
-
   allSections.addEventListener('click', (e) => {
     const id = e.target.dataset.id;
     if (id) {
@@ -26,8 +25,6 @@ function PageTransition() {
       element.classList.add('active-section');
     }
   });
-
-
 }
 
 function ThemeTransition() {
