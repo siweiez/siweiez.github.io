@@ -11,7 +11,7 @@
   --color-secondary-b: #ffe9e9;
   --color-white: #ffffff;
   --color-black: #000;
-  --color-grey: #808080;
+  --color-grey: #d3d3d3;
   --color-grey-0: #373737;
   --color-grey-1: #575757;
   --color-grey-2: #757575;
@@ -26,7 +26,7 @@
   --color-secondary-b: #2e318d;
   --color-white: #121212;
   --color-black: #ffffff;
-  --color-grey: #808080;
+  --color-grey: #d3d3d3;
   --color-grey-0: #e8e8e8;
   --color-grey-1: #c3c3c3;
   --color-grey-2: #acacac;
@@ -165,12 +165,12 @@ section {
       i {
         transition: all 0.25s ease-in-out;
         font-size: 1.65rem;
-        color: var(--color-grey-2);
+        color: var(--color-grey-3);
         pointer-events: none;
       }
       &:hover i {
         font-size: 1.7rem;
-        color: var(--color-grey-1);
+        color: var(--color-grey-2);
         transition: 0.25s ease-in-out;
       }
     }
