@@ -477,6 +477,7 @@ section {
      object-fit: cover;
   border-radius: 15px;
   transition: all 0.4s ease-in-out;
+  box-shadow: 1px 5px 10px var(--color-grey-4);
 }
 .portfolios .portfolio-item .hover-item {
   width: 100%;
@@ -506,7 +507,6 @@ section {
 .portfolios .portfolio-item:hover img {
   filter: brightness(1.01);
   transform: translateY(-2px);
-  box-shadow: 1px 4px 15px var(--color-grey-4);
   transition: all 0.6s ease-in-out;
 }
 
